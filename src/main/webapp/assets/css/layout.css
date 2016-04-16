@@ -1,0 +1,88 @@
+/**
+ * Layout Stylesheets
+ */
+
+/* Top Bar */
+.topbar {
+	padding: 6px 0;
+	font-size: 13px;
+	border-bottom: 1px solid #eee;
+}
+.topbar p {
+	margin: 0;
+}
+.topbar ul {
+	list-style: none;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+.topbar ul > li {
+	float: left;
+	position: relative;
+    display: block;
+    margin-left: 6px;
+}
+.topbar ul > li:nth-child(1) {
+	margin-left: 0;
+}
+.topbar ul > li.divider {
+	width: 1px;
+	overflow: hidden;
+	height: 1.4em;
+	background: #ddd;
+}
+
+
+/* Header */
+.header {
+	padding: 20px 0;
+}
+.header .logo {
+	float: left;
+}
+.header .searchbox, .header .toolbox {
+	float: right;
+	padding-top: 13px;
+}
+.header .toolbox {
+	margin-left: 64px;
+}
+
+
+/* Navbar */
+.navbar, .navbar-nav {
+	margin: 0;
+}
+.navbar .navbar-default {
+	background: #3399cc;
+}
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover {
+	color: #fff;
+	background: #336699;
+}
+.navbar .navbar-default .navbar-nav > .open > a,
+.navbar .navbar-default .navbar-nav > .open > a:focus,
+.navbar .navbar-default .navbar-nav > .open > a:hover {
+	color: #fff;
+	background: #336699;
+}
+.navbar > .navbar-nav {
+	margin: 0;
+}
+.navbar-default .navbar-nav > li > a {
+	color: #fff;
+}
+
+
+/* Home Slider */
+.revslider-wrapper > .container {
+	position: relative;
+}
+
+
+/* Footer */
+.footer {
+	padding: 20px 0;
+}
