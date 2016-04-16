@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
   String username = (String) session.getAttribute("username");
 %>
@@ -37,7 +38,7 @@
 <div class="header">
   <div class="container">
     <div class="logo">
-      <a href="/"><img src="assets/img/logo.png" /></a>
+      <a href="/"><img src="/assets/img/logo.png" /></a>
     </div>
     <div class="toolbox">
       <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-user"></i> 个人中心</button>
@@ -58,7 +59,7 @@
   <div class="container">
     <div class="navbar navbar-default" role="nav">
       <ul class="nav navbar-nav">
-        <li><a href="#">全部商品分类</a></li>
+        <li><a href="/eshop/">全部商品分类</a></li>
         <li><a href="#">首页</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">商品分类 <span class="caret"></span></a>
@@ -97,26 +98,28 @@
 <div class="revslider-wrapper">
   <div class="container">
     <table class="table item" border="0" style="width: 980px;">
-      <tr>
-        <td rowspan="3" height="100px" width="100px" style="border-bottom: 1px solid #ddd">
-          <img src="/assets/img/pro1.jpg" width="80px" height="80px"/></td>
-        <td>555 77 854</td>
-        <td rowspan="1">sssss</td>
-        <td rowspan="1">sssss</td>
-        <td rowspan="1">sssss</td>
-        <td rowspan="3" id="add2cart">
-          <button type="button" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-shopping-cart"></i> 加入购物车</button>
-        </td>
-      </tr>
-      <tr>
-        <td>555 77 855</td>
-        <td rowspan="2" class="two-row">sss</td>
-        <td rowspan="2" class="two-row">sss</td>
-        <td rowspan="2" class="two-row">sss</td>
-      </tr>
-      <tr style="border-bottom: 1px solid #ddd">
-        <td>555 77 855</td>
-      </tr>
+      <c:forEach items="${goods}" var="good">
+        <tr>
+          <td rowspan="3" height="100px" width="100px" style="border-bottom: 1px solid #ddd">
+            <img src="/assets/img/pro1.jpg" width="80px" height="80px"/></td>
+          <td>${good.goodName}</td>
+          <td rowspan="1">库存</td>
+          <td rowspan="1">价格</td>
+          <td rowspan="1">购买数量</td>
+          <td rowspan="3" id="add2cart">
+            <button type="button" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-shopping-cart"></i> 加入购物车</button>
+          </td>
+        </tr>
+        <tr>
+          <td>${good.description}</td>
+          <td rowspan="2" class="two-row">${good.stock}</td>
+          <td rowspan="2" class="two-row">${good.price}</td>
+          <td rowspan="2" class="two-row">sss</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #ddd">
+          <td>${good.type}</td>
+        </tr>
+      </c:forEach>
     </table>
   </div>
 </div>

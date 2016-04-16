@@ -11,11 +11,12 @@ public class Good {
     private double price;
     private Integer stock;
     private String url;
+    private String unit;
 
     public Good() {
     }
 
-    public Good(Integer goodId, String goodName, String description, String type, double price, Integer stock, String url) {
+    public Good(Integer goodId, String goodName, String description, String type, double price, Integer stock, String url, String unit) {
         this.goodId = goodId;
         this.goodName = goodName;
         this.description = description;
@@ -23,6 +24,7 @@ public class Good {
         this.price = price;
         this.stock = stock;
         this.url = url;
+        this.unit = unit;
     }
 
     public Integer getGoodId() {
@@ -81,6 +83,14 @@ public class Good {
         this.url = url;
     }
 
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
     @Override
     public String toString() {
         return "Good{" +
@@ -91,6 +101,7 @@ public class Good {
                 ", price=" + price +
                 ", stock=" + stock +
                 ", url='" + url + '\'' +
+                ", unit='" + unit + '\'' +
                 '}';
     }
 }

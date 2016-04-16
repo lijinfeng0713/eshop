@@ -31,7 +31,7 @@ public class LoginContrlloer {
         if (u != null && u.getPassword().equals(user.getPassword())) {
             request.getSession().setAttribute("username", u.getUsername());
             request.getSession().setAttribute("userId", u.getId());
-            return "index";
+            return "redirect:/eshop/";
         } else {
             return "login";
         }
