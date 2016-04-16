@@ -22,4 +22,8 @@
             #{id}
         </foreach>
     </delete>
+
+    <select id="findUserByUsername" resultType="com.lijinfeng.eshop.entity.User">
+        SELECT * FROM USER WHERE username = #{username}
+    </select>
 </mapper>

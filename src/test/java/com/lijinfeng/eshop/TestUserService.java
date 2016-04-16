@@ -39,7 +39,7 @@ public class TestUserService {
 
     @Test
     public void testBatchDelete() {
-        userService.batchDelete(110,111,112);
+        userService.batchDelete(110, 111, 112);
     }
 
     @Test
@@ -70,6 +70,11 @@ public class TestUserService {
         Map<String, Object> param = new HashMap<String, Object>();
         param.put("ids", list);
         userService.batchDel(param);
+    }
+
+    @Test
+    public void testFindUserByUsername () {
+        System.out.println(userService.findByUsername("admin"));
     }
 }
 

@@ -17,5 +17,6 @@ public interface UserMapper {
     void batchAdd(List<User> list);
     void updateUserById(int id);
     void batchDel(Map map);
+    public User findUserByUsername (String username);
 
 }

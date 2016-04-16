@@ -63,5 +63,11 @@ public class UserServiceImpl implements UserService {
         userMapper.batchDel(map);
     }
 
+    @Override
+    public User findByUsername(String username) {
+        User user = userMapper.findUserByUsername(username);
+        return user;
+    }
+
 }
 

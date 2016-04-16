@@ -18,5 +18,6 @@ public interface UserService {
     void batchAdd(List<User> list);
     void updateUserById(int id);
     void batchDel(Map map);
+    public User findByUsername(String username);
 }
 

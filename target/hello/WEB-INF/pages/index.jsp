@@ -6,12 +6,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+  String username = (String) session.getAttribute("username");
+%>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>Li He</title>
+  <title>Eshop|首页</title>
   <link rel="stylesheet" type="text/css" href="/assets/vender/bootstrap/dist/css/bootstrap.min.css" media="screen" />
   <link rel="stylesheet" type="text/css" href="/assets/css/common.css" media="screen" />
   <link rel="stylesheet" type="text/css" href="/assets/css/layout.css" media="screen" />
@@ -21,7 +24,7 @@
 <div class="topbar">
   <div class="container">
     <ul>
-      <li>欢迎你</li>
+      <li>欢迎你, <%= username%></li>
     </ul>
     <ul class="pull-right">
       <li><a href="#">登录</a></li>
