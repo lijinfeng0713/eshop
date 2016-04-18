@@ -6,3 +6,10 @@ body {
 	width: 980px !important;
 	padding: 0;
 }
+
+.sweet-overlay {
+	z-index: 2000;
+}
+.sweet-alert .icon {
+	z-index: -1;
+}

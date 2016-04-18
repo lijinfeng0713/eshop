@@ -4,11 +4,15 @@ import com.lijinfeng.eshop.service.GoodService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
- * Created by ljf-����˫�� on 2016/4/16.
+ * Created by ljf-梁燕双栖 on 2016/4/16.
  */
 @Controller
 @RequestMapping("/eshop")
@@ -19,6 +23,27 @@ public class IndexController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index (Model model) {
         model.addAttribute("goods",goodService.listGoods());
+        return "index";
+    }
+
+    @RequestMapping(value = "/search", method = RequestMethod.POST)
+    public String search (HttpServletRequest request, Model model) {
+        String condition = request.getParameter("search-condition");
+        if ("".equals(condition)) {
+            model.addAttribute("goods",goodService.listGoods());
+        } else {
+            model.addAttribute("goods",goodService.findGoodsByCondition(condition));
+        }
+        return "index";
+    }
+
+    @RequestMapping(value = "/category/{id}", method = RequestMethod.GET)
+    public String category (@PathVariable int id, Model model) {
+        String type = null;
+        if (id == 1) type = "电子产品";
+        if (id == 2) type = "衣服饰品";
+        if (id == 3) type = "精美小吃";
+        model.addAttribute("goods", goodService.findGoodsByType(type));
         return "index";
     }
 }

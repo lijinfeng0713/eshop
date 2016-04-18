@@ -8,4 +8,8 @@ import java.util.List;
  */
 public interface GoodService {
     public List<Good> listGoods();
+    public List<Good> findGoodsByCondition (String condition);
+    public List<Good> findGoodsByType (String type);
+    public Good findGoodById (Integer googId);
+    public void updateGoodStock(Integer goodId, int amount);
 }

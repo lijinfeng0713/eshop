@@ -28,4 +28,32 @@ public class TestGoodService {
             System.out.println(good);
         }
     }
+
+    @Test
+    public void testFindGoodsByCondition() {
+        List<Good> list = new ArrayList<Good>();
+        list = goodService.findGoodsByCondition("西湖藕粉");
+        System.out.println(list.size());
+        for (Good good : list) {
+            System.out.println(good.toString());
+        }
+    }
+
+    @Test
+    public void testFindGoodsByType() {
+        List<Good> list = new ArrayList<Good>();
+        list = goodService.findGoodsByType("精美小吃");
+        for (Good good : list) {
+            System.out.println(good.toString());
+        }
+    }
+
+    @Test
+    public void testUpdateGoodStock() {
+        goodService.updateGoodStock(98,1);
+    }
+    @Test
+    public void testFindGoodById () {
+        System.out.println(goodService.findGoodById(1));
+    }
 }

@@ -14,10 +14,24 @@
         <result property="unit" column="unit"/>
         <result property="url" column="url"/>
     </resultMap>
+
     <select id="list" resultMap="GoodsList">
         SELECT * FROM goods;
     </select>
     <select id="findGoodById" resultType="com.lijinfeng.eshop.entity.Good">
         SELECT * FROM goods WHERE good_id = #{goodId}
     </select>
+    <select id="findGoodByCondition" parameterType="String" resultMap="GoodsList">
+        SELECT * FROM goods WHERE good_name LIKE CONCAT(CONCAT('%', #{condition}), '%')
+                            OR description LIKE CONCAT(CONCAT('%', #{condition}), '%')
+                            OR type LIKE CONCAT(CONCAT('%', #{condition}), '%')
+    </select>
+
+    <select id="findGoodsByType" parameterType="String" resultMap="GoodsList">
+        SELECT * FROM goods WHERE goods.type = #{type}
+    </select>
+
+    <update id="updateGoodStock" parameterType="Integer">
+        UPDATE goods SET stock = #{amount} WHERE good_id = #{goodId}
+    </update>
 </mapper>
