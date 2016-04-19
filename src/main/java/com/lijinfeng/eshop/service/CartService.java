@@ -37,5 +37,10 @@ public interface CartService {
      */
     void batchDelete (Carts[] carts);
 
+    /**
+     * 获取购物车中的订单的数目
+     */
+    int getSizeOfCart ();
+
 
 }

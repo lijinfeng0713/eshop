@@ -10,6 +10,7 @@ import com.lijinfeng.eshop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,9 +39,10 @@ public class UserController {
     private GoodService goodService;
 
     @RequestMapping(value = "/cart", method = RequestMethod.GET)
-    public String cart (Model model, HttpSession session) {
+    public String cart (ModelMap model, HttpSession session) {
         model.addAttribute("carts", cartService.myCarts(String.valueOf(session.getAttribute("userId"))));
-        return "cart";
+        model.addAttribute("size",cartService.getSizeOfCart());
+        return "user/cart";
     }
 
     @RequestMapping(value = "/cart/add", method = RequestMethod.POST)

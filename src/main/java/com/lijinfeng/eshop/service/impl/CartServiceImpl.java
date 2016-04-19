@@ -42,4 +42,9 @@ public class CartServiceImpl implements CartService {
     public void batchDelete(Carts[] carts) {
         cartMapper.batchDelete(carts);
     }
+
+    @Override
+    public int getSizeOfCart() {
+        return cartMapper.getSizeOfCart();
+    }
 }

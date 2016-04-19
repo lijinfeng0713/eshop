@@ -25,4 +25,10 @@
         }
     };
 
+    //显示购物车中未结算的订单数目
+    var size = $(".size").text();
+    if (size == "0") {
+        $(".size").hide();
+    }
+
 })(jQuery);

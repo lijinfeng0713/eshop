@@ -13,3 +13,6 @@ body {
 .sweet-alert .icon {
 	z-index: -1;
 }
+.badge {
+	background-color: red;
+}

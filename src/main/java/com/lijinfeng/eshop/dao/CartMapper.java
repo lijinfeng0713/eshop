@@ -28,5 +28,10 @@ public interface CartMapper {
      */
     void batchDelete (Carts[] carts);
 
+    /**
+     * 获取购物车中的订单数目
+     */
+    int getSizeOfCart ();
+
 
 }

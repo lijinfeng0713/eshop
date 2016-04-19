@@ -48,4 +48,9 @@ public class TestCartService {
         carts[1] = new Carts(23, "热干面", "精美小吃", 4.0, 1, 4.0, null);
         cartService.batchDelete(carts);
     }
+
+    @Test
+    public void testSize () {
+        System.out.println(cartService.getSizeOfCart());
+    }
 }

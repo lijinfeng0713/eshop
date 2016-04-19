@@ -28,6 +28,10 @@
         SELECT good_id FROM cart WHERE cart_id = #{cartId}
     </select>
 
+    <select id="getSizeOfCart" resultType="Integer">
+        SELECT COUNT(cart_id) FROM cart
+    </select>
+
     <delete id="deleteFromCart" parameterType="Integer">
         DELETE FROM cart WHERE cart_id = #{cartId}
     </delete>

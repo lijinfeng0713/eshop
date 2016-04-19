@@ -1,9 +1,11 @@
 package com.lijinfeng.eshop.controller;
 
+import com.lijinfeng.eshop.service.CartService;
 import com.lijinfeng.eshop.service.GoodService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,9 +22,14 @@ public class IndexController {
 
     @Autowired
     private GoodService goodService;
+
+    @Autowired
+    private CartService cartService;
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String index (Model model) {
+    public String index (ModelMap model) {
         model.addAttribute("goods",goodService.listGoods());
+        model.addAttribute("size",cartService.getSizeOfCart());
         return "index";
     }
 
@@ -34,6 +41,7 @@ public class IndexController {
         } else {
             model.addAttribute("goods",goodService.findGoodsByCondition(condition));
         }
+        model.addAttribute("size",cartService.getSizeOfCart());
         return "index";
     }
 
@@ -44,6 +52,7 @@ public class IndexController {
         if (id == 2) type = "衣服饰品";
         if (id == 3) type = "精美小吃";
         model.addAttribute("goods", goodService.findGoodsByType(type));
+        model.addAttribute("size",cartService.getSizeOfCart());
         return "index";
     }
 }
