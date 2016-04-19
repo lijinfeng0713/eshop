@@ -1,6 +1,7 @@
 package com.lijinfeng.eshop;
 
 import com.lijinfeng.eshop.entity.Cart;
+import com.lijinfeng.eshop.entity.Carts;
 import com.lijinfeng.eshop.service.CartService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -38,5 +39,13 @@ public class TestCartService {
     @Test
     public void testGetGoodId () {
         System.out.println(cartService.getGoodIdByCartId(5));
+    }
+
+    @Test
+    public void testBatchDelete () {
+        Carts[] carts = new Carts[2];
+        carts[0] = new Carts(24, "热干面", "精美小吃", 4.0, 1, 4.0, null);
+        carts[1] = new Carts(23, "热干面", "精美小吃", 4.0, 1, 4.0, null);
+        cartService.batchDelete(carts);
     }
 }

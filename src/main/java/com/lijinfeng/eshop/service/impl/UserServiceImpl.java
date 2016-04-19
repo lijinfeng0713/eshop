@@ -1,6 +1,8 @@
 package com.lijinfeng.eshop.service.impl;
 
+import com.lijinfeng.eshop.dao.OrderMapper;
 import com.lijinfeng.eshop.dao.UserMapper;
+import com.lijinfeng.eshop.entity.Order;
 import com.lijinfeng.eshop.entity.User;
 import com.lijinfeng.eshop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private OrderMapper orderMapper;
 
     @Override
     public void addUser(User user) {
@@ -67,6 +72,16 @@ public class UserServiceImpl implements UserService {
     public User findByUsername(String username) {
         User user = userMapper.findUserByUsername(username);
         return user;
+    }
+
+    @Override
+    public void pay(Order order) {
+        orderMapper.add(order);
+    }
+
+    @Override
+    public void batchPay(List orders) {
+        orderMapper.batchAdd(orders);
     }
 
 }

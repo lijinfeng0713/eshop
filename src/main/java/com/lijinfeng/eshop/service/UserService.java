@@ -1,5 +1,6 @@
 package com.lijinfeng.eshop.service;
 
+import com.lijinfeng.eshop.entity.Order;
 import com.lijinfeng.eshop.entity.User;
 
 import java.util.List;
@@ -19,5 +20,18 @@ public interface UserService {
     void updateUserById(int id);
     void batchDel(Map map);
     public User findByUsername(String username);
+
+    /**
+     * 用户进行购物车结算
+     * @param order
+     */
+    public void pay(Order order);
+
+
+    /**
+     * 用户进行批量支付
+     * @param orders
+     */
+    public void batchPay (List orders);
 }
 

@@ -1,5 +1,6 @@
 package com.lijinfeng.eshop;
 
+import com.lijinfeng.eshop.entity.Order;
 import com.lijinfeng.eshop.entity.User;
 import com.lijinfeng.eshop.service.UserService;
 import org.junit.Test;
@@ -14,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by ljf-����˫�� on 2016/4/15.
+ * Created by ljf-梁燕双栖 on 2016/4/15.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:config/mybatis/spring-mybatis.xml"})
@@ -75,6 +76,25 @@ public class TestUserService {
     @Test
     public void testFindUserByUsername () {
         System.out.println(userService.findByUsername("admin"));
+    }
+
+    @Test
+    public void testPay() {
+        Order order = new Order(1, "92", "2","热干面", "精美小吃", 4.0, 1, 4.0, "2016-04-19 12:09:11");
+        userService.pay(order);
+    }
+
+    @Test
+    public void testBatchPay () {
+        List<Order> orders = new ArrayList<Order>();
+        Order order1 = new Order(1, "92", "2","热干面", "精美小吃", 4.0, 1, 4.0, "2016-04-19 12:09:11");
+        Order order2 = new Order(2, "92", "2","热干面", "精美小吃", 4.0, 1, 4.0, "2016-04-19 12:09:11");
+
+        orders.add(order1);
+        orders.add(order2);
+
+        userService.batchPay(orders);
+
     }
 }
 

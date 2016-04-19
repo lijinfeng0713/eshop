@@ -171,6 +171,7 @@
       }]
     });
 
+    //从购物车中删除选中的记录
     $(".btn-delete").on("click", function () {
       var cartId = $(this).closest("tr").data("text");
       var amount = $(this).closest("tr").find("td:eq(4)").text();
@@ -213,6 +214,75 @@
         return false;
       });
     });
+
+    //全选功能
+    $("#selectAll").on("change", function() {
+      var flag = $(this).prop("checked");
+      $(".checkItem").prop("checked", flag); //选中或者取消选中
+    });
+    $('.checkItem').on('change', function() {
+      var checked = $('.checkItem:checked').length;
+      if (checked == 0) {
+        $('#selectAll').prop('indeterminate', false);
+        $('#selectAll').prop('checked', false);
+      } else if (checked < $('.checkItem').length) {
+        $('#selectAll').prop('indeterminate', true);
+      } else {
+        $('#selectAll').prop('indeterminate', false);
+        $('#selectAll').prop('checked', true);
+      }
+    });
+
+    //完成支付功能
+    $("#btn-pay").on("click", function() {
+      var data = [];
+      var flag = true;
+      //获取选中行的数据
+      $('.checkItem:checked').closest('tr').each(function() {
+        var row = $(this);
+        var cartId = row.data("text");
+        var goodName = row.find("td:eq(1)").text();
+        var type = row.find("td:eq(2)").text();
+        var price = row.find("td:eq(3)").text();
+        var amount = row.find("td:eq(4)").text();
+        var total = row.find("td:eq(5)").text();
+
+        data.push({
+          cartId : cartId,
+          goodName : goodName,
+          type : type,
+          price : price,
+          amount : amount,
+          total : total
+        });
+      });
+      console.log(data);
+      if (flag) {
+        data = JSON.stringify(data);
+        $.ajax({
+          type: "POST",
+          contentType: "application/json",
+          dataType: "json",
+          url: "/user/order/add",
+          data: data,
+          success : function(data) {
+            sweetAlert({
+              title: '系统提示',
+              text: '支付成功！',
+              type: 'success'
+            }, function() {
+              window.location.reload();
+            });
+          },
+          error: function(data) {
+            sweetAlert('系统提示', '支付失败 ，请重新操作！', 'error');
+          }
+        });
+      } else {
+        alert("提交成绩不能为空");
+      }
+    });
+
   });
 </script>
 </body>

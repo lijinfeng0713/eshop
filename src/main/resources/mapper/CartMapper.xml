@@ -31,4 +31,11 @@
     <delete id="deleteFromCart" parameterType="Integer">
         DELETE FROM cart WHERE cart_id = #{cartId}
     </delete>
+
+    <delete id="batchDelete" parameterType="List">
+        DELETE FROM cart WHERE cart_id IN
+        <foreach item="cart" collection="array" open="(" separator="," close=")">
+            #{cart.cartId}
+        </foreach>
+    </delete>
 </mapper>

@@ -2,6 +2,7 @@ package com.lijinfeng.eshop.service.impl;
 
 import com.lijinfeng.eshop.dao.CartMapper;
 import com.lijinfeng.eshop.entity.Cart;
+import com.lijinfeng.eshop.entity.Carts;
 import com.lijinfeng.eshop.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,5 +36,10 @@ public class CartServiceImpl implements CartService {
     @Override
     public Integer getGoodIdByCartId(Integer cartId) {
         return cartMapper.getGoodIdByCartId(cartId);
+    }
+
+    @Override
+    public void batchDelete(Carts[] carts) {
+        cartMapper.batchDelete(carts);
     }
 }
