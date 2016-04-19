@@ -17,21 +17,39 @@ public interface UserService {
     User findUserById(int id);
     List<User> findAll();
     void batchAdd(List<User> list);
+
+    /**
+     * 根据userId更改用户信息
+     */
     void updateUserById(int id);
+
     void batchDel(Map map);
-    public User findByUsername(String username);
+
+    /**
+     * 根据用户名查询用户
+     * @param username
+     * @return
+     */
+    User findByUsername(String username);
 
     /**
      * 用户进行购物车结算
      * @param order
      */
-    public void pay(Order order);
+    void pay(Order order);
 
 
     /**
      * 用户进行批量支付
      * @param orders
      */
-    public void batchPay (List orders);
+    void batchPay (List orders);
+
+    /**
+     * 获取某一用户的所有订单
+     * @param userId
+     * @return
+     */
+    List<Order> myOrders (String userId);
 }
 

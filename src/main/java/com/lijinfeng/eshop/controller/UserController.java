@@ -71,8 +71,10 @@ public class UserController {
     }
 
     @RequestMapping(value = "/order", method = RequestMethod.GET)
-    public String order (Model model) {
-        return "user";
+    public String order (ModelMap model, HttpSession session) {
+        model.addAttribute("orders", userService.myOrders(String.valueOf(session.getAttribute("userId"))));
+        model.addAttribute("size",cartService.getSizeOfCart());
+        return "user/order";
     }
 
     /**

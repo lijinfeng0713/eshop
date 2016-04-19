@@ -13,11 +13,12 @@ public class Order {
     private  int amount;
     private double total;
     private String time;
+    private String status;
 
     public Order() {
     }
 
-    public Order(Integer orderId, String userId, String goodId, String goodName, String type, double price, int amount, double total, String time) {
+    public Order(Integer orderId, String userId, String goodId, String goodName, String type, double price, int amount, double total, String time, String status) {
         this.orderId = orderId;
         this.userId = userId;
         this.goodId = goodId;
@@ -27,6 +28,7 @@ public class Order {
         this.amount = amount;
         this.total = total;
         this.time = time;
+        this.status = status;
     }
 
     public Integer getOrderId() {
@@ -35,6 +37,14 @@ public class Order {
 
     public void setOrderId(Integer orderId) {
         this.orderId = orderId;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getGoodId() {
@@ -93,12 +103,12 @@ public class Order {
         this.time = time;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getStatus() {
+        return status;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
@@ -113,6 +123,7 @@ public class Order {
                 ", amount=" + amount +
                 ", total=" + total +
                 ", time='" + time + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }

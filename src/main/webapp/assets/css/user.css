@@ -1,0 +1,41 @@
+.sidebar {
+    width: 120px;
+    height: 300px;
+    float: left;
+    padding: 0;
+    border: 1px solid rgba(0,0,0,.15);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.menu {
+    list-style: none;
+    padding-left: 0;
+}
+.divider {
+    height: 1px;
+    background-color: #ccc;
+}
+
+.menu >.item {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 120px;
+}
+
+.item:hover{
+    background: #CCC;
+}
+
+.menu li>a {
+    text-decoration: none;
+    display: block;
+}
+
+.content {
+    float: right;
+    width: 850px;
+}
+.revslider-wrapper {
+    margin-top: 6px;
+}

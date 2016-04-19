@@ -80,21 +80,26 @@ public class TestUserService {
 
     @Test
     public void testPay() {
-        Order order = new Order(1, "92", "2","热干面", "精美小吃", 4.0, 1, 4.0, "2016-04-19 12:09:11");
+        Order order = new Order(1, "92", "2","热干面", "精美小吃", 4.0, 1, 4.0, "2016-04-19 12:09:11","");
         userService.pay(order);
     }
 
     @Test
     public void testBatchPay () {
         List<Order> orders = new ArrayList<Order>();
-        Order order1 = new Order(1, "92", "2","热干面", "精美小吃", 4.0, 1, 4.0, "2016-04-19 12:09:11");
-        Order order2 = new Order(2, "92", "2","热干面", "精美小吃", 4.0, 1, 4.0, "2016-04-19 12:09:11");
+        Order order1 = new Order(1, "92", "2","热干面", "精美小吃", 4.0, 1, 4.0, "2016-04-19 12:09:11","");
+        Order order2 = new Order(2, "92", "2","热干面", "精美小吃", 4.0, 1, 4.0, "2016-04-19 12:09:11","");
 
         orders.add(order1);
         orders.add(order2);
 
         userService.batchPay(orders);
 
+    }
+
+    @Test
+    public void testMyOrders () {
+        System.out.println(userService.myOrders("92"));
     }
 }
 

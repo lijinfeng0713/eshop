@@ -44,7 +44,7 @@
       <a href="/eshop/"><img src="/assets/img/logo.png" /></a>
     </div>
     <div class="toolbox">
-      <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-user"></i> 个人中心</button>
+      <a href="/user/order"><button type="button" class="btn btn-default"><i class="glyphicon glyphicon-user"></i> 个人中心</button></a>
       <a href="/user/cart">
         <button type="button" class="btn btn-default">
           <i class="glyphicon glyphicon-shopping-cart"></i> 购物车

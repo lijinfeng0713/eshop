@@ -10,10 +10,10 @@ import java.util.List;
  * Created by ljf-ÁºÑàË«ÆÜ on 2016/4/16.
  */
 public interface GoodMapper {
-    public List<Good> list();
-    public Good get();
-    public Good findGoodById(Integer goodId);
-    public List<Good> findGoodByCondition (@Param(value = "condition") String condition);
-    public List<Good> findGoodsByType (@Param(value = "type") String type);
-    public void updateGoodStock(@Param(value = "goodId")Integer goodId, @Param(value = "amount")int amount);
+    List<Good> list();
+    Good get();
+    Good findGoodById(Integer goodId);
+    List<Good> findGoodByCondition (@Param(value = "condition") String condition);
+    List<Good> findGoodsByType (@Param(value = "type") String type);
+    void updateGoodStock(@Param(value = "goodId")Integer goodId, @Param(value = "amount")int amount);
 }

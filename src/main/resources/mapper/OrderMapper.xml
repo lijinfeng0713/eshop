@@ -4,14 +4,18 @@
 
 <mapper namespace="com.lijinfeng.eshop.dao.OrderMapper">
     <insert id="add" parameterType="com.lijinfeng.eshop.entity.Order">
-        INSERT INTO orders (order_id, u_id, good_id, good_name, type, price, amount, total, time)
+        INSERT INTO orders (order_id, user_id, good_id, good_name, type, price, amount, total, time)
                     VALUES (#{orderId},#{userId}, #{goodId}, #{goodName}, #{type}, #{price}, #{amount}, #{total}, #{time})
     </insert>
 
     <insert id="batchAdd" parameterType="List">
-        INSERT INTO orders (order_id, u_id, good_id, good_name, type, price, amount, total, time) VALUES
+        INSERT INTO orders (order_id, user_id, good_id, good_name, type, price, amount, total, time) VALUES
         <foreach item="order" collection="list" separator=",">
           (#{order.orderId},#{order.userId}, #{order.goodId}, #{order.goodName}, #{order.type}, #{order.price}, #{order.amount}, #{order.total}, #{order.time})
         </foreach>
     </insert>
+    
+    <select id="getOrders" resultType="com.lijinfeng.eshop.entity.Order">
+        SELECT * FROM orders
+    </select>
 </mapper>

@@ -43,7 +43,7 @@
       <a href="/eshop/"><img src="/assets/img/logo.png" /></a>
     </div>
     <div class="toolbox">
-      <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-user"></i> 个人中心</button>
+      <a href="/user/order"><button type="button" class="btn btn-default"><i class="glyphicon glyphicon-user"></i> 个人中心</button></a>
       <a href="/user/cart">
         <button type="button" class="btn btn-default">
           <i class="glyphicon glyphicon-shopping-cart"></i> 购物车
@@ -255,7 +255,7 @@
             success : function(data) {
               sweetAlert({
                 title: '系统提示',
-                text: '添加到购物城成功！',
+                text: '添加到购物车成功！',
                 type: 'success'
               }, function() {
                 $('#cartModal').modal('hide');

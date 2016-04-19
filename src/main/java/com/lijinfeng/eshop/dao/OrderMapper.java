@@ -1,18 +1,29 @@
 package com.lijinfeng.eshop.dao;
 
 import com.lijinfeng.eshop.entity.Order;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
 
 /**
- * Created by ljf-ÁºÑàË«ÆÜ on 2016/4/19.
+ * Created by ljf-æ¢ç‡•åŒæ – on 2016/4/19.
  */
+
 public interface OrderMapper {
     public void add (Order order);
 
     /**
-     * ÅúÁ¿Ìí¼Ó¶©µ¥
+     * æ‰¹é‡æ·»åŠ è®¢å•
      * @param orders
      */
-    public void batchAdd(List<Order> orders);
+    void batchAdd(List<Order> orders);
+
+    /**
+     * è·å–æŸä¸€ç”¨æˆ·çš„æ‰€æœ‰è®¢å•
+     * @param userId
+     * @return
+     */
+
+    List<Order> getOrders (@Param(value = "userId") String userId);
 }

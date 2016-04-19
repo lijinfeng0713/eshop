@@ -84,5 +84,10 @@ public class UserServiceImpl implements UserService {
         orderMapper.batchAdd(orders);
     }
 
+    @Override
+    public List<Order> myOrders(String userId) {
+        return orderMapper.getOrders(userId);
+    }
+
 }
 

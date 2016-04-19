@@ -5,8 +5,10 @@
     <file url="file://$PROJECT_DIR$/src/main/java/com/lijinfeng/eshop/controller/LoginContrlloer.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/lijinfeng/eshop/controller/LoginFilter.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/lijinfeng/eshop/controller/UserController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lijinfeng/eshop/dao/OrderMapper.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/lijinfeng/eshop/dao/UserMapper.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/assets/css/cart.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/assets/css/user.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/assets/js/common.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/com/lijinfeng/eshop/TestUserService.java" charset="UTF-8" />
   </component>
