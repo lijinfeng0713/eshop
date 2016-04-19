@@ -2,6 +2,7 @@ package com.lijinfeng.eshop.controller;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
@@ -23,14 +24,15 @@ public class LoginFilter implements Filter {
         String uri = request.getRequestURI();
 
         //对URI进行判断，如果是静态资源，就不进行过滤
-        if (uri.startsWith("/assets")) {
+        if (uri.startsWith("/assets") || uri.equals("/")) {
             filterChain.doFilter (servletRequest, servletResponse);
             return;
         }
         //对未登录的请求进行过滤
         if (userId == null) {
-            System.out.println("null:"+ request.getContextPath()+"/");
+            //((HttpServletResponse)servletResponse).sendRedirect(request.getContextPath()+"/");
             request.getRequestDispatcher(request.getContextPath()+"/").forward(servletRequest,servletResponse);
+
         }
         filterChain.doFilter (servletRequest, servletResponse);
     }
