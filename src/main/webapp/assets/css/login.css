@@ -10,6 +10,21 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+.login-header {
+    height: 80px;
+    background: rgba(255,255,255,.6);
+    margin-top: 0px;
+}
+
+.login-logo {
+    padding-top: 12px;
+    padding-left: 8px;
+}
+
+.login-page {
+    margin-top: -80px;
+}
+
 .background {
     background: rgba(0,0,0,.5);
     position: fixed;

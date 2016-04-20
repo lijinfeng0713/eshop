@@ -18,8 +18,16 @@
   <script type="text/javascript" src="/assets/vender/jquery-backstretch/src/jquery.backstretch.js"></script>
   <script type="text/javascript" src="/assets/js/login.js"></script>
   <script type="text/javascript" src="/assets/vender/bootstrap/dist/js/bootstrap.min.js"></script>
+  <style>
+
+  </style>
 </head>
 <body>
+  <div class="login-header">
+    <div class="login-logo">
+      <img src="/assets/img/logo.png"/>
+    </div>
+  </div>
   <div class="login-page">
     <div class="background"></div>
     <div class="wrapper">
