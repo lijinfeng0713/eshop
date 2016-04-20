@@ -3,8 +3,9 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/README.md" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/lijinfeng/eshop/controller/IndexController.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/lijinfeng/eshop/controller/LoginContrlloer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lijinfeng/eshop/controller/LoginController.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/lijinfeng/eshop/controller/LoginFilter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lijinfeng/eshop/controller/RegisterController.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/lijinfeng/eshop/controller/UserController.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/lijinfeng/eshop/dao/OrderMapper.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/lijinfeng/eshop/dao/UserMapper.java" charset="UTF-8" />

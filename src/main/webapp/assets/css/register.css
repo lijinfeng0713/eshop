@@ -1,0 +1,38 @@
+.errtip > .tooltip-arrow {
+    border-top-color: #99FF9E;
+}
+
+.errtip > .tooltip-inner {
+    color: #000;
+    font-size: 14px;
+    font-family: "Segoe UI", "Open Sans", "Lucida Grande", FreeSans, Arimo, "Source Sans Pro", "Droid Sans", "Helvetica Neue", Helvetica, "Microsoft YaHei UI", "Microsoft YaHei", "Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif;
+    text-align: center;
+    padding-top: 10px;
+    width: 200px;
+    height: 40px;
+    background-color: rgba(255, 0, 0, 0.6);
+    border-radius: 6px;
+}
+
+.login-page button[type=button] {
+    width: 100%;
+    height: 48px;
+    min-height: 1em;
+    line-height: 48px;
+    padding: 0 1.5em;
+    border: none;
+    background-color: #2eb06f;
+    border-radius: 2em;
+    outline: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: opacity .25s ease,background-color .25s ease,color .25s ease,background .25s ease,box-shadow .25s ease;
+}
+#register:hover {
+    background-color: #49ba81;
+}
+#register:active {
+    background-color: #2aa165;
+}

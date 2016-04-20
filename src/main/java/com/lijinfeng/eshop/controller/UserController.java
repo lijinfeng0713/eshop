@@ -112,6 +112,20 @@ public class UserController {
             return "{ \"SUCCESS\" : false }";
         }
 
+    }
 
+    @RequestMapping(value = "/address", method = RequestMethod.GET)
+    public String myAddress (ModelMap model, HttpSession session) {
+        String userId = String.valueOf(session.getAttribute("userId"));
+        //获取默认的收货地址
+        model.addAttribute("addre", userService.findDefaultAddress(userId));
+
+        //获取购物车中订单的数量
+        model.addAttribute("size",cartService.getSizeOfCart());
+
+        //获取所有的收货地址
+        model.addAttribute("addresses", userService.myAddress(userId));
+
+        return "user/address";
     }
 }

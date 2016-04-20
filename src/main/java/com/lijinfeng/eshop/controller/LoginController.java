@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Controller
 @RequestMapping("/")
-public class LoginContrlloer {
+public class LoginController {
 
     @Autowired
     private UserService userService;
@@ -35,4 +35,6 @@ public class LoginContrlloer {
             return "login";
         }
     }
+
+
 }

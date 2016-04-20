@@ -1,7 +1,9 @@
 package com.lijinfeng.eshop.service.impl;
 
+import com.lijinfeng.eshop.dao.AddressMapper;
 import com.lijinfeng.eshop.dao.OrderMapper;
 import com.lijinfeng.eshop.dao.UserMapper;
+import com.lijinfeng.eshop.entity.Address;
 import com.lijinfeng.eshop.entity.Order;
 import com.lijinfeng.eshop.entity.User;
 import com.lijinfeng.eshop.service.UserService;
@@ -22,6 +24,11 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private OrderMapper orderMapper;
+
+    @Autowired
+    private AddressMapper addressMapper;
+
+
 
     @Override
     public void addUser(User user) {
@@ -87,6 +94,16 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<Order> myOrders(String userId) {
         return orderMapper.getOrders(userId);
+    }
+
+    @Override
+    public Address findDefaultAddress(String userId) {
+        return addressMapper.findDefaultAddress(userId);
+    }
+
+    @Override
+    public List<Address> myAddress(String userId) {
+        return addressMapper.findAddressByUserId(userId);
     }
 
 }

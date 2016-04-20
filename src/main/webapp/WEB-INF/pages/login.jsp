@@ -46,7 +46,7 @@
           <div class="field identity">
             <label> <input type="checkbox" id="remenber-me" name="remember-me" value="true" />
               记住密码</label>
-            <a href="#">没有账号？立即注册</a>
+            <a href="/register">没有账号？立即注册</a>
           </div>
           <div class="field">
             <button type="submit" id="login">登录</button>

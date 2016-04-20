@@ -23,8 +23,8 @@ public class LoginFilter implements Filter {
         //获取请求的URI
         String uri = request.getRequestURI();
 
-        //对URI进行判断，如果是静态资源，就不进行过滤
-        if (uri.startsWith("/assets") || uri.equals("/")) {
+        //对URI进行判断，如果是静态资源或者是登录注册，就不进行过滤
+        if (uri.startsWith("/assets") || uri.equals("/") || uri.equals("/register")) {
             filterChain.doFilter (servletRequest, servletResponse);
             return;
         }

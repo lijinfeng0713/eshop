@@ -33,7 +33,7 @@
     <ul class="pull-right">
       <li><a href="/">登录</a></li>
       <li class="divider"></li>
-      <li><a href="#">注册</a></li>
+      <li><a href="/register">注册</a></li>
     </ul>
   </div>
 </div><!-- /.topbar -->

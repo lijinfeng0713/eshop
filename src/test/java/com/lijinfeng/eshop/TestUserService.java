@@ -101,5 +101,15 @@ public class TestUserService {
     public void testMyOrders () {
         System.out.println(userService.myOrders("92"));
     }
+
+    @Test
+    public void testMyAddress () {
+        System.out.println(userService.myAddress("92"));
+    }
+
+    @Test
+    public void findDefaultAddress() {
+        System.out.println(userService.findDefaultAddress("92"));
+    }
 }
 

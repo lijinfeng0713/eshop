@@ -1,5 +1,6 @@
 package com.lijinfeng.eshop.service;
 
+import com.lijinfeng.eshop.entity.Address;
 import com.lijinfeng.eshop.entity.Order;
 import com.lijinfeng.eshop.entity.User;
 
@@ -51,5 +52,14 @@ public interface UserService {
      * @return
      */
     List<Order> myOrders (String userId);
+
+    /**
+     * 根据用户id查找该用户的所有收货地址
+     * @param userId
+     * @return
+     */
+    List<Address> myAddress (String userId);
+
+    Address findDefaultAddress (String userId);
 }
 
